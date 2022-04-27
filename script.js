@@ -46,6 +46,7 @@ setTimeout(() => {
             spanNumero.className = "green";
         } else {
             //Non hai indovinato
+            spanNumero.className = "red";
         }
         elementoNumeriInseriti.appendChild(spanNumero);
     }
