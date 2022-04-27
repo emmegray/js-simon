@@ -8,6 +8,7 @@
 // Creazione numeri casuali in pagina
 const elementoNumeri = document.getElementById("numeriDaIndovinare");
 const elementoNumeriInseriti = document.getElementById("numeriInseriti");
+const elementoRisultato = document.getElementById("risultato");
 const elementoPunteggio = document.getElementById("punteggio");
 const numeriDaGenerare = 5;
 let arrayNumeri = [];
@@ -28,7 +29,7 @@ setTimeout(() => {
 setTimeout(() => {
     //Inserimento dei numeri dall'utente
     for (let index = 0; index < 5; index++) {
-        const inputUtente = prompt("Inserire numero da 1 a 5:");
+        const inputUtente = prompt("Te li ricordi tutti? Inserisci numeri da 1 a 5:");
         numeriUtente.push(Number(inputUtente));
     }
 
@@ -44,9 +45,11 @@ setTimeout(() => {
             //Hai indovinato
             totaleNumeriIndovinati++;
             spanNumero.className = "green";
+            elementoRisultato.innerHTML = 'Hai vinto!';
         } else {
             //Non hai indovinato
             spanNumero.className = "red";
+            elementoRisultato.innerHTML = 'Hai perso :(';
         }
         elementoNumeriInseriti.appendChild(spanNumero);
     }
@@ -54,3 +57,4 @@ setTimeout(() => {
     elementoPunteggio.innerHTML = `Numeri indovinati totali: ${totaleNumeriIndovinati}`;
 }, 6000);
 
+4
